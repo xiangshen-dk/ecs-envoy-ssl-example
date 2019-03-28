@@ -1,0 +1,50 @@
+{
+  "containerDefinitions": [
+    {
+      "dnsSearchDomains": null,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/mytask",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "image": "111196147180.dkr.ecr.us-east-1.amazonaws.com/myservice:latest",
+      "essential": true,
+      "name": "myservice"
+    },
+    {
+      "dnsSearchDomains": null,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/mytask",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "entryPoint": null,
+      "portMappings": [
+        {
+          "hostPort": 8443,
+          "protocol": "tcp",
+          "containerPort": 8443
+        }
+      ],
+      "image": "xxxxxxxxx.dkr.ecr.us-east-1.amazonaws.com/myenvoy:tag",
+      "name": "myenvoy"
+    }
+  ],
+  "placementConstraints": [],
+  "memory": "256",
+
+..........
+
+  "networkMode": "awsvpc",
+  "cpu": "256",
+  "revision": 8,
+  "status": "ACTIVE",
+  "proxyConfiguration": null,
+  "volumes": []
+}

@@ -3,6 +3,4 @@ FROM envoyproxy/envoy:latest
 COPY service-envoy.yaml /etc/envoy/service-envoy.yaml
 ADD ./example-com.crt /etc/example-com.crt
 ADD ./example-com.key /etc/example-com.key
-ADD ./private.pem /etc/private.pem
-ADD ./public.pem /etc/public.pem
 CMD /usr/local/bin/envoy -c /etc/envoy/service-envoy.yaml
